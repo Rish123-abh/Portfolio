@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="portfolio.css">
+</head>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script src="https://kit.fontawesome.com/58a810656e.js" crossorigin="anonymous"></script>
+<script>
+      document.addEventListener("DOMContentLoaded", function (event) {
+        // array with texts to type in typewriter
+        var dataText = [
+          "Full Stack Developer",
+          "Web Developer",
+          "UI-UX Designer",
+          "Backend Developer",
+          "Coder",
+        ];
+
+        // type one text in the typwriter
+        // keeps calling itself until the text is finished
+        function typeWriter(text, i, fnCallback) {
+          // chekc if text isn't finished yet
+          if (i < text.length) {
+            // add next character to h1
+            document.querySelector(".role").innerHTML =
+              text.substring(0, i + 1) + '<span aria-hidden="true"></span>';
+
+            // wait for a while and call this function again for next character
+            setTimeout(function () {
+              typeWriter(text, i + 1, fnCallback);
+            }, 100);
+          }
+          // text finished, call callback if there is a callback function
+          else if (typeof fnCallback == "function") {
+            // call callback after timeout
+            setTimeout(fnCallback, 700);
+          }
+        }
+        // start a typewriter animation for a text in the dataText array
+        function StartTextAnimation(i) {
+          if (typeof dataText[i] == "undefined") {
+            setTimeout(function () {
+              StartTextAnimation(0);
+            }, 20000);
+          }
+          // check if dataText[i] exists
+          if (i < dataText[i].length) {
+            // text exists! start typewriter animation
+            typeWriter(dataText[i], 0, function () {
+              // after callback (and whole text has been animated), start next text
+              StartTextAnimation(i + 1);
+            });
+          }
+        }
+        // start the text animation
+        StartTextAnimation(0);
+      });
+    </script>
+    <script>
+        var typeData = new Typed(".role", {
+          strings: [
+            "Full Stack Developer",
+            "Web Developer",
+            "UI-UX Designer",
+            "Backend Developer",
+            "Coder",
+          ],
+          loop: true,
+          typeSpeed: 100,
+          backSpeed: 80,
+          backDelay: 1000,
+        });
+      </script>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="navbar">
+                <div class="navbar-left">
+                  <img src="https://i.pinimg.com/originals/d8/28/dc/d828dcdcc6d49b143a5eaa81a6d302f3.png " width="100px" alt="">  
+                    <h1 class ="text">ishabh</h1>
+                    <img  class="imageA" src="A-removebg-preview.png" width=" 100px" alt="">
+                    <h1 class="text">grawal</h1>
+                </div> 
+                <div class="navbar-right">
+                    <a href="#project-section">Project</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#contact-section">Contact Me</a>
+                </div>
+            </div>
+            <div class="section" id="section">
+              <div class="faded-text">Rishabh Agrawal</div>
+                <div class="section-left">
+                        <h1> Hi! Rishabh </h1>
+                        <h1>I am a <span class="role">Developer</span></h1>
+                        <p>I'm a software developer and this is my protfolio Website.
+                            <br>Here you will know about my projects and skills  </p>
+                        <!-- < div class=" button"> Hire me </div> -->
+                        <div class="button">Hire me</div>
+                    </div>
+                    <div class="section-right icons absolutes">
+                    <img  class=" user" src="rishabh.jpg" alt="">
+                    <img  class=" dots" src="dots.png" height="100px" width="70px" alt="">
+                    <img  class="cube" src="cube.png" height="40px" width="40px" alt="">
+                    <img class=" zigzag" src="zigzags.png" height="50px" width="50px" alt="">
+                    <img  class=" circle" src="circle.png" height="50px" width="50px" alt="">
+                    <img  class=" plus" src="plus.png" height="50px" width="50px" alt="">
+                </div>
+            </div>
+            <div class="project-section " id="project-section">
+                <h2 class="page-header">
+                    Projects
+                </h2>
+                <div class="project-container">
+                    <div class="project-card" id="project1">
+                        <!-- <img src="https://th.bing.com/th/id/OIP.9Y6af246bUkWbNeyLv5w6QHaEo?pid=ImgDet&rs=1" alt=""> -->
+                        <div class="project-number project-number-left">01</div>
+                        <div class="project-content">
+                            <div class="project-image"> 
+                                <img src="HTML.png" height="50px" width="50px" alt="">
+                                <img src="CSS.png"  height="50px" width="50px"alt="">
+                                <img src="Javascript.svg"  height="50px" width="50px"alt="">
+                            </div>
+                        <h2 class="project-heading">Weather API</h2>
+                        <div class="project-subheading">I have Created a Weather webapp which will give the accurate 
+                            data of  every place . 
+                        </div>
+                        <div class="btn-grp">
+                            <div class="button">Read more</div>
+                            <a href="https://github.com/Rish123-abh/weatherapi" target="_blank"> <i title="GitHubLink" class="fa-brands fa-github icon"></i></a>
+                            <a href="https://rish123-abh.github.io/weatherapi/" target="_blank"> <i title="Live Link" class="fa-solid fa-link icon"></i></a>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="project-card" id="project2">
+                        <!-- <img src="https://th.bing.com/th/id/OIP.9Y6af246bUkWbNeyLv5w6QHaEo?pid=ImgDet&rs=1" alt=""> -->
+                        <div class="project-number project-number-right">02</div>
+                        <div class="project-content ">
+                            <div class="project-image"> 
+                                <img src="HTML.png"  height="50px" width="50px"alt="">
+                                <img src="CSS.png"  height="50px" width="50px"alt="">
+                                <img src="Javascript.svg"  height="50px" width="50px"alt="">
+                            </div>
+                            <h2 class="project-heading">Random Password Generator</h2>
+                        <p class="project-subheading">Created a Random Password generator using HTML,CSS,JavaScript.It 
+                            will also show you the strength of password.  
+                            </p>
+                        <div class="btn-grp">
+                            <div class="button" id="btn">Read more</div>
+                            <a href="https://github.com/Rish123-abh/passwordgenerator" target="_blank"> <i title="GitHubLink" class="fa-brands fa-github icon"></i></a>
+                            <a href="https://rish123-abh.github.io/passwordgenerator/" target="_blank"> <i title="Live Link" class="fa-solid fa-link icon"></i></a>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="project-card" id="project3">
+                        <!-- <img src="https://th.bing.com/th/id/OIP.9Y6af246bUkWbNeyLv5w6QHaEo?pid=ImgDet&rs=1" alt=""> -->
+                        <div class="project-number project-number-left">03</div>
+                        <div class="project-content">
+                            <div class="project-image"> 
+                                <img src="React.png"  height="50px" width="50px" alt="">
+                                <img src="CSS.png"  height="50px" width="50px"alt="">
+                                <img src="Javascript.svg" height="50px" width="50px"alt="">
+                            </div>
+                        <h2 class="project-heading">Shopping Cart</h2>
+                        <div class="project-subheading">Created Shopping Cart frontend using Reactjs and Redux.</div>
+                        <div class="btn-grp">
+                            <div class="button">Read more</div>
+                            <a href="https://github.com/Rish123-abh/Shopping_cart" target="_blank"> <i title="GitHubLink" class="fa-brands fa-github icon"></i></a>
+                            <a href="https://neon-crostata-8e5aa7.netlify.app/" target="_blank"> <i title="Live Link" class="fa-solid fa-link icon"></i></a>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="skills" id="skills">
+                <div class="skill-faded-text">Skills</div>
+                <div class="skills-left">
+                    <div class="skills-text">
+                        <h2><span class="caps">M</span>e and <br/></br>My tech stack</h2>
+                    </div>
+                    <div class="skills-subheading">
+                        <p>   Hi Everyone My name is Rishabh Agrawal I am a Full Stack Web
+                            Developer I have been working for last 1 Year and Currently I am
+                             working on ReactJS and Making Beautiful UI-UX are my
+                            fey features.</p>
+                            <br>
+                        <p>I have different skills required for web developer. I have worked on HTMl,CSS,Javascript 
+                            and created different projects as mentioned above </p>
+                    <br>
+                    <p>
+                        I Know about Github and git . I know how to host webpages using github and netlify.
+                        I have also worked on ReactJS and created different project.Currently woking on databases.
+                    </p>
+                    
+                    </div>
+
+                </div>
+                <div class="skills-right">
+                    <img  class="ballon" src="blob vector.png" alt="" class="skillsLogo" >
+                    <img src="HTML.png" alt="" class="skillsLogo" />
+                    <img src="CSS.png" alt="" class="skillsLogo" />
+                    <img src="Javascript.svg" alt="" class="skillsLogo" />
+                    <img src="React.png" alt="" class="skillsLogo" />
+                    <img src="NodeJs.svg" alt="" class="skillsLogo" />
+                    <img src="Github.svg" alt="" class="skillsLogo" />
+                    <img src="Redux.svg" alt="" class="skillsLogo" />
+                    <img src="Tailwind.png" alt="" class="skillsLogo" />
+                    <img src="MongoDB.svg" alt="" class="skillsLogo" />
+                    <img src="Express.png" alt="" class="skillsLogo" />
+                    <img src="Git.svg" alt="" class="skillsLogo" />
+                   
+                </div>
+            </div>
+            <div class="contact-section" id="contact-section">
+                <div class="contact-heading">Contact Me</div>
+                <div class="contact-subheading">Questions,Thoughts,Or Just Want To Say Hello? </div>
+                <div class="input-section">
+                    <input type="name" placeholder="Enter your name "><br>
+                    <input type="email" name="email" id="email1" placeholder="Enter your email"><br>
+                    <input type="subject" placeholder="Enter your subject"><br>
+                    <textarea name="message" id="" cols="30" rows="10" placeholder="Enter your message"></textarea>
+                    <button type="submit" class="button" id="button1">Send Message <i class="submit-icon fa-solid fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="footer-faded-text faded-text">Rishabh Agrawal</div>
+                <div class="footer-content">
+                    <a href="#project-section">Projects</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#contact-section">Contact Me</a>
+                </div>
+                <div class="footer-icons">
+                   <a href="https://www.linkedin.com/in/rishabh-agrawal-233499221/" target="_blank"> <i  class="fa-brands fa-linkedin" ></i></a> 
+                   <a href="https://github.com/Rish123-abh" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
